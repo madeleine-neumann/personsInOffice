@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <table class="table" ng-controller="UsersCtrl">
+        <tr ng-repeat="user in users | orderBy:'present':true">
+          <td>{{user.name}}</td>
+          <td>
+            <div class="btn" ng-class="{'btn-success btn-large btn-block': user.present, 'btn-danger btn-large btn-block': !user.present}               "ng-click="togglePresent(user)"> Is in office: {{user.present}}</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to 'New User', new_user_path %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
